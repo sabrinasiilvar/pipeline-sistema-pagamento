@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter mochawesome --reporter-options reportDir=reports,reportFilename=mochawesome-report,quiet=true"
+    "test": "mocha --reporter mochawesome --reporter-options reportDir=reports,reportFilename=mochawesome-report,quiet=true",
+    "coverage": "nyc npm test"
+  },
+  "nyc": {
+    "reporter": ["text", "html"],
+    "report-dir": "coverage",
+    "include": ["src/**/*.js"]
   },
   "keywords": [],
   "author": "",
@@ -11,6 +17,7 @@
   "description": "",
   "devDependencies": {
     "mocha": "^10.2.0",
-    "mochawesome": "^7.1.4"
+    "mochawesome": "^7.1.4",
+    "nyc": "^18.0.0"
   }
 }

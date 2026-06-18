@@ -23,10 +23,21 @@ jobs:
       - name: Executando os testes
         run: npm test
 
+      - name: Verificando cobertura de código
+        run: npm run coverage
+
       - name: Fazendo upload do relatório de testes
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: reports/
+          if-no-files-found: warn
+
+      - name: Fazendo upload do relatório de cobertura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
           if-no-files-found: warn
