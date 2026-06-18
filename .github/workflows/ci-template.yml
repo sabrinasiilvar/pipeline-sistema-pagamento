@@ -8,21 +8,22 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Baixando o código fonte
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Instalando o Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Instalando dependências
         run: npm ci
 
-      - name: Run tests and generate report
+      - name: Executando os testes
         run: npm test
 
-      - name: Upload test report artifact
+      - name: Fazendo upload do relatório de testes
         if: always()
         uses: actions/upload-artifact@v4
         with:
