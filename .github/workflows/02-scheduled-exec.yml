@@ -7,5 +7,4 @@ on:
 
 jobs:
   run-ci:
-    timeout-minutes: 30
     uses: ./.github/workflows/ci-template.yml
