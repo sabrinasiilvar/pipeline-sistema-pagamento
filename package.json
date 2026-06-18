@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter mochawesome --reporter-options reportDir=reports,reportFilename=mochawesome-report,quiet=true",
+    "test": "mocha --reporter mochawesome --reporter-options reportDir=reports,reportFilename=mochawesome-report,quiet=true,inlineAssets=true",
     "coverage": "nyc npm test"
   },
   "nyc": {
