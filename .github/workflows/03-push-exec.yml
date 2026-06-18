@@ -1,0 +1,13 @@
+name: "Execução por Push"
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+timeout-minutes: 30
+
+jobs:
+  run-ci:
+    uses: ./.github/workflows/ci-template.yml

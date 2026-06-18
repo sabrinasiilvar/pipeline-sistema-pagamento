@@ -1,0 +1,161 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-17T23:59:06.547Z",
+    "end": "2026-06-17T23:59:06.551Z",
+    "duration": 4,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6750d26b-fdce-4fd4-bd7a-c09c2b53ba11",
+      "title": "",
+      "fullFile": "C:\\Users\\sabri\\Desktop\\pipeline-sistema-pagamento\\test\\ServicoDePagamento.test.js",
+      "file": "\\test\\ServicoDePagamento.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "614afaa1-d68c-4e07-9cbe-e38e9171df04",
+          "title": "ServicoDePagamento",
+          "fullFile": "C:\\Users\\sabri\\Desktop\\pipeline-sistema-pagamento\\test\\ServicoDePagamento.test.js",
+          "file": "\\test\\ServicoDePagamento.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"ServicoDePagamento\"",
+              "fullTitle": "ServicoDePagamento \"before each\" hook in \"ServicoDePagamento\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "servico = new ServicoDePagamento();",
+              "err": {},
+              "uuid": "5603948b-f6e9-4ea7-9aca-2efacb6bcb1e",
+              "parentUUID": "614afaa1-d68c-4e07-9cbe-e38e9171df04",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "deve registrar pagamento com categoria \"cara\" quando valor maior que 100",
+              "fullTitle": "ServicoDePagamento deve registrar pagamento com categoria \"cara\" quando valor maior que 100",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "servico.pagar('0987-7656-3475', 'Samar', 156.87);\nconst ultimo = servico.consultarUltimoPagamento();\nassert.deepStrictEqual(ultimo, {\n  codigoBarras: '0987-7656-3475',\n  empresa: 'Samar',\n  valor: 156.87,\n  categoria: 'cara',\n});",
+              "err": {},
+              "uuid": "c3a8202e-b075-42db-bb15-25120e5862fc",
+              "parentUUID": "614afaa1-d68c-4e07-9cbe-e38e9171df04",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "deve registrar pagamento com categoria \"padrão\" quando valor menor ou igual a 100",
+              "fullTitle": "ServicoDePagamento deve registrar pagamento com categoria \"padrão\" quando valor menor ou igual a 100",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "servico.pagar('1234-5678-9012', 'Empresa X', 100.00);\nconst ultimo = servico.consultarUltimoPagamento();\nassert.strictEqual(ultimo.categoria, 'padrão');",
+              "err": {},
+              "uuid": "a2cc3117-0875-42e5-93ad-b7e7de213ca8",
+              "parentUUID": "614afaa1-d68c-4e07-9cbe-e38e9171df04",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "deve retornar o último pagamento realizado",
+              "fullTitle": "ServicoDePagamento deve retornar o último pagamento realizado",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "servico.pagar('0001', 'Empresa A', 50.00);\nservico.pagar('0002', 'Empresa B', 200.00);\nassert.strictEqual(servico.consultarUltimoPagamento().codigoBarras, '0002');",
+              "err": {},
+              "uuid": "9b1f6372-7327-46e2-b512-e3cd3f36fc2e",
+              "parentUUID": "614afaa1-d68c-4e07-9cbe-e38e9171df04",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c3a8202e-b075-42db-bb15-25120e5862fc",
+            "a2cc3117-0875-42e5-93ad-b7e7de213ca8",
+            "9b1f6372-7327-46e2-b512-e3cd3f36fc2e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFilename": "mochawesome-report",
+        "quiet": "true"
+      },
+      "version": "6.3.2"
+    }
+  }
+}

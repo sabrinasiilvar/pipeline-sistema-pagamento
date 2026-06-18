@@ -1,0 +1,12 @@
+name: "Execução Agendada"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * 1'
+
+timeout-minutes: 30
+
+jobs:
+  run-ci:
+    uses: ./.github/workflows/ci-template.yml
