@@ -3,8 +3,7 @@ name: "Execução Manual"
 on:
   workflow_dispatch:
 
-timeout-minutes: 30
-
 jobs:
   run-ci:
+    timeout-minutes: 30
     uses: ./.github/workflows/ci-template.yml

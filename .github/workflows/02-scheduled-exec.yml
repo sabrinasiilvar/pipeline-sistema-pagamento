@@ -5,8 +5,7 @@ on:
   schedule:
     - cron: '0 4 * * 1'
 
-timeout-minutes: 30
-
 jobs:
   run-ci:
+    timeout-minutes: 30
     uses: ./.github/workflows/ci-template.yml
